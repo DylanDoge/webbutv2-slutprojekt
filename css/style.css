@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Frank+Ruhl+Libre&family=Inter:wght@300&family=Open+Sans&family=Oxygen:wght@300&family=PT+Sans&display=swap');
+
+* {
+    margin: 0;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+#wrapper {
+    display: grid;
+}
+
+header {
+    background-color: black;
+    color: white;
+    height: 90px;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: 100%;
+}
+
+#headerTitle {
+    display: flex;
+    font-size: 34px;
+    align-self: center;
+    padding-left: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.removeDeco {
+    text-decoration: none;
+}
+
+.textWhite {
+    color: white;
+}
+
+@media screen and (max-width: 550px) {
+    #headerTitle {
+        font-size: 21px;
+        padding: 0;
+        grid-area: 1 / 2 / 2 / 3;
+        justify-self: center;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+    }
+
+    #menuBtn {
+        display: block;
+        align-self: center;
+        filter: invert(100%);
+        padding-left: 1rem;
+    }
+
+    #cart {
+        display: block;
+        align-self: center;
+        justify-self: right;
+        scale: 80%;
+        filter: invert(100%);
+        padding-right: 1rem;
+    }
+
+}
