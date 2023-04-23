@@ -4,9 +4,23 @@
     margin: 0;
 }
 
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --title-font: Helvetica, sans-serif;
+    --button-font: Verdana, sans-serif;
+    --description-font: Verdana, sans-serif;
+}
+
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--title-font);
     font-weight: 300;
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-size: 54px;
+    font-weight: 500;
 }
 
 #wrapper {
@@ -14,14 +28,14 @@ h1 {
 }
 
 header {
-    background-color: black;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     height: 90px;
 }
 
 nav {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(4, 4fr);
     height: 100%;
 }
 
@@ -40,6 +54,10 @@ nav {
     display: flex;
 }
 
+.grid {
+    display: grid;
+}
+
 .removeDeco {
     text-decoration: none;
 }
@@ -48,7 +66,76 @@ nav {
     color: white;
 }
 
-@media screen and (max-width: 550px) {
+.navLink {
+    font-family: var(--description-font);
+    justify-self: center;
+    align-self: center;
+}
+
+a img#cartIcon {
+    display: block;
+    align-self: center;
+    justify-self: center;
+    scale: 80%;
+    filter: invert(100%);
+    padding-right: 1rem;
+}
+
+.titleDesciption {
+    font-family: var(--description-font);
+    font-size: 21px;
+    margin-top: 1rem;
+}
+
+.homeSummaryCard {
+    display: flex;
+    padding: 3rem 4vw 5rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.homeProductImage {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.homeProductImage section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    width: 100%;
+}
+
+.highlightedProducts {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: auto;
+}
+
+.highlightProductBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 8px;
+    height: 50px;
+    width: 125px;
+    margin-top: 4rem;
+    text-decoration: none;
+
+}
+
+.highlightProductBtn span {
+    font-family: var(--button-font);
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    line-height: 1;
+    color: white;
+}
+
+@media screen and (max-width: 550px) and (orientation: portrait) {
     #headerTitle {
         font-size: 21px;
         padding: 0;
@@ -61,20 +148,19 @@ nav {
         grid-template-columns: repeat(3, 3fr);
     }
 
-    #menuBtn {
+    .navLink {
+        display: none;
+    }
+
+    #menuBtnIcon {
         display: block;
         align-self: center;
         filter: invert(100%);
         padding-left: 1rem;
     }
 
-    #cart {
-        display: block;
-        align-self: center;
+    a #cartIcon {
         justify-self: right;
-        scale: 80%;
-        filter: invert(100%);
-        padding-right: 1rem;
     }
 
 }
