@@ -5,11 +5,13 @@
 }
 
 :root {
-    --primary-color: black;
-    --secondary-color: white;
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --title-accent-color: #892edb;
     --title-font: Helvetica, sans-serif;
     --button-font: Verdana, sans-serif;
     --description-font: Verdana, sans-serif;
+    --roundness: 8px;
 }
 
 h1 {
@@ -39,6 +41,74 @@ nav {
     height: 100%;
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--primary-color);
+    height: 800px;
+    padding-top: 110px;
+    font-family: var(--description-font);
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary-color);
+    height: fit-content;
+}
+
+.footerContent:first-child a {
+    margin-top: 1rem;
+    color: blue;
+}
+
+.footerContent:first-child a:hover {
+    color: orange;
+}
+
+.footerContent a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.footerContent a:hover {
+    color: var(--title-accent-color);
+}
+
+.footerContent h2 {
+    color: var(--title-accent-color);
+    text-transform: lowercase;
+    font-weight: bolder;
+    font-size: 34px;
+    margin-bottom: 16px;
+}
+.footerContent:first-child h2 {
+    text-transform: none;
+}
+
+footer section:first-child a {
+    text-decoration: none;
+}
+
+.footerSocials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    row-gap: 4px;
+}
+
+.footerSocialIcons {
+    filter: invert(100%);
+    width: 30px;
+    transition: all 0.2s;
+}
+
+.footerSocialIcons:hover {
+    filter: invert(100%) drop-shadow(4px 4px 0px var(--title-accent-color));
+}
+
 #headerTitle {
     display: flex;
     font-size: 34px;
@@ -63,7 +133,7 @@ nav {
 }
 
 .textWhite {
-    color: white;
+    color: var(--secondary-color);
 }
 
 .navLink {
@@ -78,7 +148,38 @@ a img#cartIcon {
     justify-self: center;
     scale: 80%;
     filter: invert(100%);
-    padding-right: 1rem;
+    margin-right: 1rem;
+}
+
+nav a:first-child {
+    text-decoration-color: #551a8b;
+}
+
+#cartIcon:hover {
+    animation-name: rotateCart;
+    animation-duration: 0.7s;
+}
+
+a.animatedUnderLine {
+    position: relative;
+}
+
+a.animatedUnderLine:before {
+    position: absolute;
+    content: "";
+    background-color: var(--title-accent-color);
+    border-radius: calc(var(--roundness ) / 2);
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+a.animatedUnderLine:hover:before {
+    visibility: visible;
+    width: 100%;
 }
 
 .titleDesciption {
@@ -118,12 +219,11 @@ a img#cartIcon {
     align-items: center;
     justify-content: center;
     background-color: black;
-    border-radius: 8px;
+    border-radius: var(--roundness);
     height: 50px;
     width: 125px;
     margin-top: 4rem;
     text-decoration: none;
-
 }
 
 .highlightProductBtn span {
@@ -132,7 +232,25 @@ a img#cartIcon {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     line-height: 1;
-    color: white;
+    color: var(--secondary-color);
+}
+
+@keyframes rotateCart {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+    }
+    89% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 @media screen and (max-width: 550px) and (orientation: portrait) {
