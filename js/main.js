@@ -1,13 +1,12 @@
 
-function getKeyVariables() {
+function getKeyLayouts() {
     return fetch('/misc/keyboardVariables.json')
         .then(response => response.json())
 }
 
 async function createKeyboard() {
-    const keyboardObjectInfo = await getKeyVariables()
+    const keyboardObjectInfo = await getKeyLayouts()
     const keyboard = keyboardObjectInfo['75%']['layoutISO']
-    // const keyTester = document.getElementById("keyTester")
     let keyArray = Object.keys(keyboard)
 
     for (let i = 0; i < keyArray.length; i += 2) {
@@ -17,14 +16,22 @@ async function createKeyboard() {
         
         for (let j = 0; j < currentKeyArray.length; j++) {
             let key = document.createElement('letter')
-            // console.log(currentKeyArray[j], j)
             key.textContent = currentKeyArray[j]
             key.classList.add('key')
+            key.style.cssText = `--key-unit-size: ${keyUnit[j]};`
             keyRow.appendChild(key)
         }
     }
 
 }
 
+function keyPressUpdate(key) {
+    keyPressed = key["key"]
+    console.log(key)
+}
+
 createKeyboard()
 
+// new KeyboardEvent()
+x = document.querySelector('body')
+x.addEventListener('keydown', key => keyPressUpdate(key));

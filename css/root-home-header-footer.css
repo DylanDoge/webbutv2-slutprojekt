@@ -124,6 +124,11 @@ footer section:first-child a {
     display: flex;
 }
 
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
 .grid {
     display: grid;
 }
@@ -235,24 +240,47 @@ a.animatedUnderLine:hover:before {
     color: var(--secondary-color);
 }
 
+#keyboardConatiner {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
 #keyTester {
     display: flex;
     flex-direction: column;
     height: 590px;
     row-gap: 0.5rem;
     color: var(--secondary-color);
-    background-color: var(--primary-color);
     font-family: var(--description-font);
-    padding: 0 10vw;
+    /* background-color: var(--primary-color); */
+    /* padding: 0 10vw; */
 }
 
 .key {
+    --key-default-size: 55px;
+    --key-unit-size: 1;
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    text-transform: capitalize;
+    height: var(--key-default-size);
+    width: calc(var(--key-default-size)*var(--key-unit-size));
     border: solid white 2px;
     border-radius: calc(var(--roundness)/2);
     text-align: center;
+    /* padding-top: 2px; */
+}
+
+.keyRow {
+    display: flex;
+    column-gap: 5px;
+}
+
+#keyRow2 {
+    margin-top: 0.5rem;
+}
+
+#keyRow6 letter:nth-child(8) {
+    margin-left: 5px;
 }
 
 @keyframes rotateCart {
