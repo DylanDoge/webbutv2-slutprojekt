@@ -261,13 +261,23 @@ a.animatedUnderLine:hover:before {
     --key-default-size: 55px;
     --key-unit-size: 1;
     display: inline-block;
+    font-family: var(--description-font);
     text-transform: capitalize;
     height: var(--key-default-size);
     width: calc(var(--key-default-size)*var(--key-unit-size));
-    border: solid white 2px;
+    border: solid white 1.5px;
     border-radius: calc(var(--roundness)/2);
     text-align: center;
-    /* padding-top: 2px; */
+    transition: 0.3s ease-out;
+}
+
+.active {
+    background-color: var(--title-accent-color);
+}
+
+.pressed {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .keyRow {
