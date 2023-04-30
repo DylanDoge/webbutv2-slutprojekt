@@ -8,7 +8,13 @@
 :root {
     --primary-color: #000000;
     --secondary-color: #ffffff;
-    --title-accent-color: #892edb;
+    --title-accent-color: #BC7BFF;
+    --link-color: #3DCEF1;
+    --link-color-hover: #FFBB40;
+    --pressed-key-color: #892EDB;
+    --title-accent-color-high-contrast: #E755FF;
+    --link-color-high-contrast: #6BEAFF;
+    --link-color-hover-high-contrast: #FFFF00;
     --title-font: Helvetica, sans-serif;
     --button-font: Verdana, sans-serif;
     --description-font: Verdana, sans-serif;
@@ -58,7 +64,6 @@ main {
     position: fixed;
     width: 100vw;
     height: 90vh;
-    top: 10vh;
     z-index: 2;
     justify-content: center;
     align-items: center;
@@ -87,11 +92,11 @@ footer {
 
 .footerContent:first-child a {
     margin-top: 1rem;
-    color: blue;
+    color: var(--link-color);
 }
 
 .footerContent:first-child a:hover {
-    color: orange;
+    color: var(--link-color-hover);
 }
 
 .footerContent a {
@@ -192,11 +197,11 @@ nav a:first-child {
     animation-duration: 0.7s;
 }
 
-a.animatedUnderLine {
+.animatedUnderLine {
     position: relative;
 }
 
-a.animatedUnderLine:before {
+.animatedUnderLine:before {
     position: absolute;
     content: "";
     background-color: var(--title-accent-color);
@@ -209,7 +214,7 @@ a.animatedUnderLine:before {
     transition: all 0.2s ease-in-out;
 }
 
-a.animatedUnderLine:hover:before {
+.animatedUnderLine:hover:before {
     visibility: visible;
     width: 100%;
 }
@@ -250,7 +255,7 @@ a.animatedUnderLine:hover:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: var(--primary-color);
     border-radius: var(--roundness);
     height: 50px;
     width: 125px;
@@ -299,7 +304,7 @@ a.animatedUnderLine:hover:before {
 }
 
 .active {
-    background-color: var(--title-accent-color);
+    background-color: var(--pressed-key-color);
 }
 
 .pressed {
