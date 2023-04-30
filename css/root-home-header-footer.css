@@ -2,6 +2,7 @@
 
 * {
     margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -12,6 +13,7 @@
     --button-font: Verdana, sans-serif;
     --description-font: Verdana, sans-serif;
     --roundness: 8px;
+    --header-hight: 9vh;
 }
 
 h1 {
@@ -30,15 +32,40 @@ h2 {
 }
 
 header {
+    position: fixed;
+    top: calc(100vh - var(--header-hight));
+    width: 100vw;
+    height: var(--header-hight);
+    z-index: 3;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    height: 90px;
 }
 
 nav {
     display: grid;
-    grid-template-columns: repeat(4, 4fr);
+    grid-template-columns: repeat(4, 1fr);
     height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+#aboutUsDescription {
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 90vh;
+    top: 10vh;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    color: var(--title-accent-color);
+    font-family: var(--title-font);
+    font-weight: bolder;
+    font-size: 34px;
 }
 
 footer {
@@ -209,7 +236,7 @@ a.animatedUnderLine:hover:before {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    height: calc(100vh - var(--header-hight));
     width: 100%;
 }
 
@@ -240,7 +267,7 @@ a.animatedUnderLine:hover:before {
     color: var(--secondary-color);
 }
 
-#keyboardConatiner {
+#keyboardContainer {
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
@@ -293,6 +320,42 @@ a.animatedUnderLine:hover:before {
     margin-left: 5px;
 }
 
+@keyframes aboutUsHovering {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes aboutUsReset {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes blur {
+    from {
+        filter: blur(0);
+    } 
+    to {
+        filter: blur(6px);
+    }
+}
+
+@keyframes unBlur {
+    from {
+        filter: blur(6px);
+    } 
+    to {
+        filter: blur(0);
+    }
+}
+
 @keyframes rotateCart {
     0% {
         transform: rotate(0);
@@ -309,6 +372,67 @@ a.animatedUnderLine:hover:before {
     100% {
         transform: rotate(0deg);
     }
+}
+
+@media screen and (max-width: 1069px){
+    .key {
+        --key-default-size: 45px;
+        font-size: 16px;
+    }
+    
+}
+
+@media screen and (max-width: 900px){
+    .key {
+        --key-default-size: 40px;
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 800px){
+    #keyboardContainer {
+        display: none;
+    }
+
+    footer {
+        height: 60vh;
+    }
+    
+}
+
+@media screen and (max-width: 792px){
+    footer {
+        display: grid;
+        padding-left: 10vw;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .homeProductImage {
+        grid-area: unset;
+    }
+    
+    .homeProductImage section {
+        height: calc(69vh - var(--header-hight));
+    }
+
+    .highlightedProducts {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: calc(100vh - var(--header-hight));
+    }
+
+    .homeSummaryCard {
+        padding: 0;
+        justify-items: center;
+        align-items: center;
+        height: 30vh;
+    }
+
+    .highlightProductBtn {
+        margin-top: 2rem;
+    }
+    
 }
 
 @media screen and (max-width: 550px) and (orientation: portrait) {
@@ -340,6 +464,7 @@ a.animatedUnderLine:hover:before {
     }
 
     footer {
+        display: flex;
         flex-direction: column;
         justify-content: flex-start;
         row-gap: 3rem;
@@ -347,4 +472,10 @@ a.animatedUnderLine:hover:before {
         height: 1400px;
     }
 
+    #keyboardContainer {
+        display: none;
+    }
+
 }
+
+
