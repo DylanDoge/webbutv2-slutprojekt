@@ -1,0 +1,105 @@
+#products-Main {
+    --products-coverImage-height: 309px;
+}
+
+.products-CoverImage {
+    max-width: 100%;
+    height: var(--products-coverImage-height);
+    position: relative;
+}
+
+#products-Header {
+    position: absolute;
+    top: calc(var(--products-coverImage-height) - 75.5px);
+    font-family: var(--description-font);
+    font-size: 51px;
+    padding: 0 28px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    transition: 1s;
+}
+
+#products-MainProducts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px 10vw;
+    max-width: 100%;
+    padding: 150px 7vw;
+}
+
+.products-card {
+    font-family: var(--description-font);
+}
+
+.products-card img {
+    max-width: 100%;
+}
+
+.products-card a {
+    color: initial;
+}
+
+.products-cardDescription {
+    font-family: inherit;
+    margin-top: 20px;
+}
+
+.products-cardDescription h3 {
+    font-weight: 700;
+    font-size: 26px;
+    width: fit-content;
+}
+
+.products-animatedUnderLine {
+    position: relative;
+}
+
+.products-animatedUnderLine:before {
+    position: absolute;
+    content: "";
+    background-color: var(--title-accent-color);
+    border-radius: calc(var(--roundness ) / 2);
+    width: 0;
+    height: 2px;
+    bottom: 4px;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.products-animatedUnderLine:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.products-cardDescription p {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1100px) {
+    #products-MainProducts {
+        padding: 150px 3vw;
+    }
+    
+    #products-MainProducts {
+        gap: 100px 5vw;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #products-MainProducts {
+        grid-template-columns: 1fr;
+        padding: 150px 7vw;
+        gap: 100px 5vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #products-MainProducts {
+        gap: 100px 5vw;
+    }
+    #products-Header {
+        top: calc(var(--products-coverImage-height) - 50px);
+        font-size: 34px;
+    }
+}

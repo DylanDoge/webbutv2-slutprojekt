@@ -1,6 +1,6 @@
-let keyboardObjectInfo
-const jeffySFX = new Audio('/misc/audio/jeffy-uh.ogg')
-const KEYBOARD_INFO_FROM_API = 'http://127.0.0.1:8000/keyboardData'
+let keyboardObjectInfo;
+const jeffySFX = new Audio('/misc/audio/jeffy-uh.ogg');
+const KEYBOARD_INFO_FROM_API = 'http://127.0.0.1:8000/keyboardData';
 
 async function fetchWithTimeout(url, timeout) {
     const controller = new AbortController;
@@ -10,7 +10,7 @@ async function fetchWithTimeout(url, timeout) {
         if (!(await response).ok) {
             throw new Error("API GET Failed: Network Issue");
         }
-        return (await response).json()
+        return (await response).json();
         
     } finally {
         clearTimeout(timeoutID);
@@ -37,15 +37,15 @@ async function createKeyboard() {
             }
         }
     } catch (error) {
-        let keyContainer = document.getElementById('keyboardContainer')
-        let text = document.createElement('p')
-        text.style.cssText = 'color: var(--secondary-color); font-family: var(--title-font); font-size: 21px;'
-        text.innerHTML = `KeyTester is unavailable.<br>Server is currently not responding, try again later.<br> (${error}) <span class="animatedUnderLine" style="color: var(--title-accent-color);">Press to Retry</span>`
+        let keyContainer = document.getElementById('keyboardContainer');
+        let text = document.createElement('p');
+        text.style.cssText = 'color: var(--secondary-color); font-family: var(--title-font); font-size: 21px;';
+        text.innerHTML = `KeyTester is unavailable.<br>Server is currently not responding, try again later.<br> (${error}) <span class="animatedUnderLine" style="color: var(--title-accent-color);">Press to Retry</span>`;
         text.addEventListener('click', () => {
-            text.remove()
-            return createKeyboard()
+            text.remove();
+            return createKeyboard();
         })
-        keyContainer.appendChild(text)
+        keyContainer.appendChild(text);
     }
     
 }
@@ -57,11 +57,11 @@ function keyPressUpdate(keyObject, released) {
     for (let i = 0; i < allKeysString.length; i++) {
         if (keyPressed == keyboardObjectInfo["keyCode"][allKeysString[i].textContent.toLowerCase()]) {
             if (released) {
-                allKeysString[i].classList.remove('pressed')
-                allKeysString[i].classList.add('active')
+                allKeysString[i].classList.remove('pressed');
+                allKeysString[i].classList.add('active');
             } else {
-                allKeysString[i].classList.remove('active')
-                allKeysString[i].classList.add('pressed')
+                allKeysString[i].classList.remove('active');
+                allKeysString[i].classList.add('pressed');
             }
         }
     }
@@ -70,27 +70,27 @@ function keyPressUpdate(keyObject, released) {
 
 function aboutInfoHover(aboutUsState) {
     if (aboutUsState) {
-        content.style.setProperty('animation', 'unBlur 0.4s forwards')
-        aboutUsDescription.style.setProperty('animation', 'aboutUsReset 0.4s')
+        content.style.setProperty('animation', 'unBlur 0.4s forwards');
+        aboutUsDescription.style.setProperty('animation', 'aboutUsReset 0.4s');
         setTimeout(() => {
-            aboutUsDescription.style.setProperty('display', 'none')
+            aboutUsDescription.style.setProperty('display', 'none');
         }, 200)
     } else {
-        aboutUsDescription.style.setProperty('display', 'flex')
-        content.style.setProperty('animation', 'blur 0.4s forwards')
-        aboutUsDescription.style.setProperty('animation','aboutUsHovering 0.4s forwards')
+        aboutUsDescription.style.setProperty('display', 'flex');
+        content.style.setProperty('animation', 'blur 0.4s forwards');
+        aboutUsDescription.style.setProperty('animation','aboutUsHovering 0.4s forwards');
     }
 }
 
 
-let aboutUs = document.getElementById('aboutUs')
-let content = document.querySelector('main')
-let aboutUsDescription = document.getElementById('aboutUsDescription')
-aboutUs.addEventListener('mouseenter', () => aboutInfoHover(false))
-aboutUs.addEventListener('mouseleave', () => aboutInfoHover(true))
+let aboutUs = document.getElementById('aboutUs');
+let content = document.querySelector('main');
+let aboutUsDescription = document.getElementById('aboutUsDescription');
+aboutUs.addEventListener('mouseenter', () => aboutInfoHover(false));
+aboutUs.addEventListener('mouseleave', () => aboutInfoHover(true));
 
 createKeyboard();
-let allKeysString = document.getElementsByClassName('key')
+let allKeysString = document.getElementsByClassName('key');
 
 const x = document.querySelector('body');
 x.addEventListener('keydown', key => keyPressUpdate(key, false));

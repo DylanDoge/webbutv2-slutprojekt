@@ -39,8 +39,26 @@ def greet(name = None):
 
 @app.get("/keyboardData")
 def keyboardInfo():
-    data = openJSONParser('../misc/keyboardVariables.json')
+    data = openJSONParser('json/keyboardVariables.json')
     return data
+
+@app.get("/products")
+def retrieveProducts(type = None):
+    data = openJSONParser('json/products.json')
+    if type == None:
+        category = data
+    elif type == "keyboards":
+        category = data["keyboards"]
+    elif type == "switches":
+        category = data["switches"]
+    else:
+        category = "404 Key not found"
+    
+    return category
+
+
+
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

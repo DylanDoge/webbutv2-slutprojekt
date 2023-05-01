@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Frank+Ruhl+Libre&family=Inter:wght@300&family=Open+Sans&family=Oxygen:wght@300&family=PT+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @import url('https://db.onlinewebfonts.com/c/2be9f95ec30c2c016b07414bc0ad268b?family=Zurich'); */
 * {
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -16,9 +17,9 @@
     --link-color-high-contrast: #6BEAFF;
     --link-color-hover-high-contrast: #FFFF00;
     --title-font: Helvetica, sans-serif;
-    --button-font: Verdana, sans-serif;
-    --description-font: Verdana, sans-serif;
-    --roundness: 8px;
+    --button-font: 'Roboto', 'Zurich', sans-serif;
+    --description-font: 'Space Mono', monospace;
+    --roundness: 0px;
     --header-hight: 9vh;
 }
 
@@ -105,7 +106,7 @@ footer {
     transition: all 0.2s;
 }
 
-.footerContent a:hover {
+.footerContent a:hover, .highlightProductBtn span:hover {
     color: var(--title-accent-color);
 }
 
@@ -207,8 +208,8 @@ nav a:first-child {
     background-color: var(--title-accent-color);
     border-radius: calc(var(--roundness ) / 2);
     width: 0;
-    height: 2px;
-    bottom: -4px;
+    height: 1px;
+    bottom: 2px;
     left: 0;
     visibility: hidden;
     transition: all 0.2s ease-in-out;
@@ -257,7 +258,7 @@ nav a:first-child {
     justify-content: center;
     background-color: var(--primary-color);
     border-radius: var(--roundness);
-    height: 50px;
+    height: 55px;
     width: 125px;
     margin-top: 4rem;
     text-decoration: none;
@@ -270,6 +271,7 @@ nav a:first-child {
     text-transform: uppercase;
     line-height: 1;
     color: var(--secondary-color);
+    transition: color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #keyboardContainer {
@@ -395,7 +397,8 @@ nav a:first-child {
     
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 792px){
+
     #keyboardContainer {
         display: none;
     }
@@ -403,10 +406,7 @@ nav a:first-child {
     footer {
         height: 60vh;
     }
-    
-}
 
-@media screen and (max-width: 792px){
     footer {
         display: grid;
         padding-left: 10vw;
@@ -436,6 +436,15 @@ nav a:first-child {
 
     .highlightProductBtn {
         margin-top: 2rem;
+    }
+
+
+    h1, .homeTitle {
+        font-size: 29px;
+    }
+
+    .homeTitle, .titleDesciption {
+        text-align: center;
     }
     
 }
@@ -482,5 +491,3 @@ nav a:first-child {
     }
 
 }
-
-

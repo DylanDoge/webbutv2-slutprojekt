@@ -1,0 +1,79 @@
+{
+    "keyboards": {
+        "Zouer 68": {
+            "productsTitle": "Zouer 68 - Compact 65%",
+            "priceText": "Starting 899 kr",
+            "mainImage": "img/DSC01041.jpg",
+            "plate": "DK68 Polycarbonate",
+            "pcb": "DK68 Hotswap PCB Wireless BT5.0 and wired",
+            "connector": "USB-C",
+            "mountingType": "Gasket",
+            "stabilizer": "",
+            "productURL": "/Zouer68.html"
+        },
+        "CIY GAS67": {
+            "productsTitle": "CIY GAS67 - Compact 65%",
+            "priceText": "Starting 0 kr",
+            "mainImage": "img/not-available-cover.png",
+            "plate": "Included Polycarbonate",
+            "pcb": "Included 1.2mm Hotswap PCB Wireless 2.4GHz, BT 5.0 and wired",
+            "connector": "USB-C",
+            "mountingType": "Gasket",
+            "stabilizer": "",
+            "productURL": "/CIYGAS67.html"
+            
+        },
+        "Glorious GMMK PRO": {
+            "productsTitle": "Glorious GMMK PRO 75%",
+            "priceText": "Starting 1 kr",
+            "mainImage": "img/not-available-cover.png",
+            "plate": "Included Aluminium",
+            "pcb": "Included Hotswap PCB wired",
+            "connector": "USB-C",
+            "moutingType": "Gasket",
+            "stabilizer": "Durock V2 Stabilizers Screw-In",
+            "productURL": "/GMMKPRO.html"
+            
+        }
+    },
+    "switches": {
+        "Akko CS Wine Red Lubed": {
+            "type": "Linear"
+        },
+        "Akko V3 Cream Yellow": {
+            "type": "Linear"
+            
+        },
+        "Akko V3 Cream Blue": {
+            "type": "Tactile"
+            
+        },
+        "KTT Kang White V3": {
+            "type": "Linear"
+            
+        },
+        "Gazzew Boba U4T Thocky Tactile": {
+            "type": "Tactile"
+            
+        },
+        "Durock EV01 Linear": {
+            "type": "Linear"
+            
+        },
+        "Cherry MX Red": {
+            "type": "Linear"
+            
+        },
+        "Cherry MX Brown": {
+            "type": "Tactile"
+            
+        },
+        "Cherry MX Silver": {
+            "type": "Linear"
+
+        },
+        "C³ EQUALZ X TKC Banana Split": {
+            "type": "Linear"
+        }
+    }
+}
