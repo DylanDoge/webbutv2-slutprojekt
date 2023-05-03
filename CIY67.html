@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - KeyBStore</title>
+    <title>CIY67 - KeyBStore</title>
     <link rel="stylesheet" href="/css/root-home-header-footer.css">
+    <link rel="stylesheet" href="/css/product-view.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
@@ -31,50 +32,37 @@
             <p>Welllelelwe</p>
         </section>
 
-        <main>
-            <section class="highlightedProducts">
-                <figure class="homeProductImage">
-                    <section title="CIY GAS67" style="background-image: url('/img/DSC04722.JPG');"></section>
-                </figure>
-                <aside class="homeSummaryCard">
-                    <h2 class="homeTitle">CIY GAS67</h2>
-                    <p class="titleDesciption">An affordable gasket keyboard</p>
-                    <a class="highlightProductBtn" href="/CIY67.html" type="Button">
-                        <span>
-                            View
-                        </span>
-                    </a>
-                </aside>   
+        <main id="product-wrapper">
+            <section class="product-TopNavRoute">
+                <a href="/Products.html" class="removeDeco">Products</a>
+                <p>></p>
+                <a href="" class="removeDeco">CIY GAS 67</a>
             </section>
+            <section id="product-View">
+                <section id="product-Images">
+                    <!-- <img src="/img/DSC01041.JPG" alt="CIY GAS 67"> -->
+                </section>
 
-            <section class="highlightedProducts">
-                <figure class="homeProductImage">
-                    <section title="GLORIOUS GMMK PRO" style="background-image: url('/img/DSC01041.jpg');"></section>
-                </figure>
-                <aside class="homeSummaryCard">
-                    <h2 class="homeTitle">GLORIOUS GMMK PRO</h2>
-                    <p class="titleDesciption">Very metal, very hard.</p>
-                    <a class="highlightProductBtn" href="/CIY67.html" type="Button">
-                        <span>
-                            View
-                        </span>
-                    </a>
-                </aside>   
-            </section>
+                <section id="product-Description">
+                    <h2 id="product-Header">CIY GAS67 - Compact 65%</h2>
+                    <p class="product-ShortDescription">Small Description</p>
+                    <label for="singleOption" id="keySwitchLabel">Need Switches?</label>
+                    <select name="singleOption" id="keySwitchSelector">
+                        <option>None</option>
+                        <option value="C3 Banana Split">Banana Split</option>
+                    </select>
+                    <p class="product-Price">1299 kr</p>
+                    <section class="product-CartAction">
+                        <input class="product-QuanityInput" type="number" name="quantity" value="1" min="1" aria-label="Quantity">
+                        <button class="product-AddToCart">Add to Cart</button>
+                        
+                    </section>
+                </section>
+                
+                <section id="product-Detail">
+                    <p></p>
+                </section>
 
-            <section class="highlightedProducts">
-                <figure class="homeProductImage">
-                    <section title="GLORIOUS GMMK PRO" style="background-image: url('/img/DSC03685.JPG');"></section>
-                </figure>
-                <aside class="homeSummaryCard">
-                    <h2 class="homeTitle">Duck Duck Switch</h2>
-                    <p class="titleDesciption">honk honk.</p>
-                    <a class="highlightProductBtn" href="/CIY67.html" type="Button">
-                        <span>
-                            View
-                        </span>
-                    </a>
-                </aside>   
             </section>
 
         </main>

@@ -1,0 +1,120 @@
+#product-wrapper {
+    margin: 150px 0 0 0;
+}
+
+#product-View {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
+    margin: 0 200px 0 200px;
+}
+
+#product-Images {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.product-TopNavRoute {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--description-font);
+    font-weight: 700;
+    column-gap: 10px;
+}
+
+#keySwitchLabel {
+    padding-top: 2rem;
+}
+
+.product-TopNavRoute a {
+    color: var(--primary-color);
+}
+
+#product-Description {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--description-font);
+    color: var(--primary-color);
+}
+
+.product-ShortDescription {
+    font-size: 21px;
+}
+
+#keySwitchSelector {
+    max-width: 80%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px var(--primary-color) solid;
+    font-family: var(--title-font);
+    color: var(--primary-color);
+}
+
+/* #keySwitchSelector option {
+    min-height: 1.2rem;
+} */
+
+.product-Price {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.product-CartAction {
+    --button-height: 55px;
+    --button-width: 155px;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.product-AddToCart {
+    position: relative;
+    background-color: var(--title-accent-color);
+    color: var(--secondary-color);
+    font-family: var(--button-font);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    border: none;
+    text-align: center;
+    height: var(--button-height);
+    width: var(--button-width);
+    padding: 0;
+}
+
+.product-AddToCart::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: all 0.1s ease-in;
+}
+
+.product-AddToCart:hover::before {
+    opacity: 1;
+}
+
+.product-QuanityInput {
+    text-align: center;
+    border: none;
+    max-width: 50px;
+    max-height: var(--button-height);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Remove arrow up and down: Chrome, Safari, Edge, Opera */
+.product-QuanityInput::-webkit-outer-spin-button,
+.product-QuanityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#product-Header {
+    /* font-family: var(--title-font); */
+    font-size: 34px;
+
+}
