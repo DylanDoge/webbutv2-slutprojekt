@@ -63,15 +63,34 @@ main {
 #aboutUsDescription {
     opacity: 0;
     position: fixed;
-    width: 100vw;
-    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
     z-index: 2;
-    justify-content: center;
-    align-items: center;
     color: var(--title-accent-color);
     font-family: var(--title-font);
     font-weight: bolder;
     font-size: 34px;
+    padding: 3vh 5vw;
+}
+
+#aboutUsImage {
+    max-width: 40%;
+}
+
+#aboutUsDescription h2 {
+    background-color: var(--primary-color);
+    font-family: var(--button-font);
+    font-weight: 700;
+    width: fit-content;
+    padding: 10px 10px;
+}
+#aboutUsDescription p {
+    margin-top: 3rem;
+    font-size: 31px;
+    font-family: var(--description-font);
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 footer {
@@ -321,6 +340,10 @@ nav a:first-child {
 
 #keyRow2 {
     margin-top: 0.5rem;
+}
+
+#keyRow4 letter:nth-child(14) {
+    color: transparent;
 }
 
 #keyRow6 letter:nth-child(8) {

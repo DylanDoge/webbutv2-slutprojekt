@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zouer 68 - KeyBStore</title>
+    <link rel="stylesheet" href="/css/root-home-header-footer.css">
+    <link rel="stylesheet" href="/css/product-view.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <section id="wrapper">
+
+        <header>
+            <nav>
+                <a id="headerTitle" href="/">
+                    <h1 class="removeDeco textWhite">
+                        KeyB Store
+                    </h1>
+                </a>
+                <img id="menuBtnIcon" class="hidden" src="/img/icons/menu_FILL0_wght400_GRAD0_opsz48.svg" alt="Menu Button">
+                <a class="navLink textWhite removeDeco animatedUnderLine" href="/Products.html" accesskey="p">Products</a>
+                <a id="aboutUs" class="navLink textWhite removeDeco animatedUnderLine" accesskey="a">About Us</a>
+                <a href="Cart.html" class="grid" accesskey="c">
+                    <img id="cartIcon" src="/img/icons/shopping_cart_checkout.svg" alt="Shopping Cart">
+                </a>
+            </nav>
+        </header>
+
+        <section id="aboutUsDescription" style="display: none;">
+            <img id="aboutUsImage" src="/img/doge.jpg" alt="The Founding Father">
+            <section>
+                <h2>ABOUT US</h2>
+                <p>The KeyBStore was made in colaboration with the mighty Doge. Unlike Elon, we don't accept Dogecoin.</p>
+            </section>
+        </section>
+
+        <main id="product-wrapper">
+            
+            <section class="product-TopNavRoute">
+                <a href="/Products.html" class="removeDeco">Products</a>
+                <p>></p>
+                <a href="" class="removeDeco">Zouer 68</a>
+            </section>
+
+            <section id="product-View">
+                <section id="product-Images">
+                    <img src="" alt="">
+                </section>
+
+                <section id="product-Description">
+                    <h2 id="product-Header"></h2>
+                    <p id="product-ShortDescription"></p>
+                    <label for="singleOption" id="keySwitchLabel">Need Switches?</label>
+                    <select name="singleOption" id="keySwitchSelector">
+                        <option>None</option>
+                    </select>
+                    <p id="product-Price"></p>
+                    <section class="product-CartAction">
+                        <input class="product-QuanityInput" type="number" name="quantity" value="1" min="1" aria-label="Quantity">
+                        <button class="product-AddToCart">Add to Cart</button>
+                    </section>
+                </section>
+                
+                <section id="product-Detail">
+                    <h2 id="product-DescriptionHeader">Specs</h2>
+                    <p></p>
+                </section>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <section class="footerContent">
+                <h2>KeyB Store</h2>
+                <p>NTI Johanneberg<br> Origovägen 4, 412 58 <br>Gothenburg Sweden.</p>
+                <a href="mailto:keys@keybstore.com">keys@keybstore.com</a>
+            </section>
+            <section class="footerContent">
+                <h2>Information</h2>
+                <a href="">Terms of Service</a>
+                <a href="">Shipping Policy</a>
+                <a href="">Privacy Policy</a>
+                <a href="https://docs.google.com/spreadsheets/d/1pKQuQ1lbb0feTja8DVIHdSvXyzAJlpfVVqnYLgQ6ZI0/edit?usp=sharing">Glossary</a>
+            </section>
+            <section class="footerContent">
+                <h2>Collection</h2>
+                <a href="">Barebones KB</a>
+                <a href="">Prebuilt KB</a>
+                <a href="">Switches</a>
+                <a href="">Stabs</a>
+            </section>
+            <section class="footerContent">
+                <h2>Socials</h2>
+                <section class="footerSocials">
+                    <a href="https://youtube.com">
+                        <img class="footerSocialIcons" src="/img/icons/youtube-mark-black.svg" alt="YouTube">
+                    </a>
+                    <a href="https://discord.com">
+                        <img class="footerSocialIcons" src="/img/icons/discord-mark-black.svg" alt="Discord">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img class="footerSocialIcons" src="/img/icons/instagram-mark-black.svg" alt="Instagram">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img class="footerSocialIcons" src="/img/icons/twitter-mark.svg" alt="Twitter">
+                    </a>
+                    <a href="https://github.com/DylanDoge/webbutv2-slutprojekt">
+                        <img class="footerSocialIcons" src="/img/icons/github.svg" alt="GitHub">
+                    </a>
+                </section>
+            </section>
+        </footer>
+
+        <button id="enableKeyboard" style="display: none;"></button>
+        <section id="keyboardContainer">
+            <section id="keyTester">
+                <section id="keyRow1" class="keyRow"></section>
+                <section id="keyRow2" class="keyRow"></section>
+                <section id="keyRow3" class="keyRow"></section>
+                <section id="keyRow4" class="keyRow"></section>
+                <section id="keyRow5" class="keyRow"></section>
+                <section id="keyRow6" class="keyRow"></section>    
+            </section>
+        </section>
+
+    </section>
+    <script src="js/main.js"></script>
+    <script src="js/productLoader.js"></script>
+</body>
+</html>

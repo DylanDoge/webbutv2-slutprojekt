@@ -1,5 +1,6 @@
 
 let products = document.getElementById('products-MainProducts');
+let productView = document.getElementById("product-View");
 
 function addProduct(productObject) {
     const productCard = document.createElement('section');
@@ -15,8 +16,8 @@ function addProduct(productObject) {
     productTitle.classList.add('products-animatedUnderLine')
     linkTag.href = productObject["productURL"];
     productImage.src = productObject["mainImage"];
-    productImage.alt = `Image of ${productObject["productsTitle"]}`;
-    productTitle.innerHTML = productObject["productsTitle"];
+    productImage.alt = `Image of ${productObject["productTitle"]}`;
+    productTitle.innerHTML = productObject["productTitle"];
     productPrice.innerHTML = productObject["priceText"];
 
     productDescription.appendChild(productTitle);
@@ -62,4 +63,61 @@ async function displayAllProducts() {
     }
 }
 
-displayAllProducts()
+function hideShowElements(elements, visible) {
+    if (visible) {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.cssText = '';
+        }
+    } else {
+        for (i = 0; i < elements.length; i++) {
+        elements[i].style.cssText = 'display: none';
+        }
+    }
+}
+
+async function loadProductContent(productName) {
+    let productSections = document.getElementById('product-View').querySelectorAll('section')
+    hideShowElements(productSections, false)
+    try {
+        const productsObject = await fetchWithTimeout(`http://127.0.0.1:8000/keyboard?keyboard=${productName}`, 1500)
+        const switches = await fetchWithTimeout('http://127.0.0.1:8000/products?type=switches', 1500)
+        let productKeyArray = Object.keys(switches);
+        
+        hideShowElements(productSections, true)
+        document.getElementById('product-Header').textContent = productsObject["productTitle"];
+        document.getElementById('product-ShortDescription').textContent = productsObject["shortDescription"];
+        document.getElementById('product-Price').textContent = productsObject["price"]
+        let image = document.getElementById('product-Images').querySelector('img')
+        image.src = productsObject["mainImage"]
+        image.alt = productsObject["productTitle"]
+        
+        for (let i = 0; i < productKeyArray.length; i++) {
+            let optionInSelector = document.createElement('option');
+            optionInSelector.value = productKeyArray[i];
+            optionInSelector.textContent = productKeyArray[i];
+            document.getElementById('keySwitchSelector').appendChild(optionInSelector);
+        }
+        
+    } catch (error) {
+        let text = document.createElement('p');
+        text.style.cssText = 'color: var(--primary-color); font-family: var(--title-font); font-size: 21px;';
+        text.innerHTML = `Products are unavailable.<br>Server is currently not responding, try again later.<br> (${error}) <span class="animatedUnderLine" style="color: var(--title-accent-color);">Press to Retry</span>`;
+        text.addEventListener('click', () => {
+            text.remove();
+            return loadProductContent(productName);
+        })
+        hideShowElements(productSections, false)
+        productView.prepend(text);
+    }
+}
+
+if (products != null) {
+    displayAllProducts()
+}
+
+if (productView != null) {
+    currentLink = window.location.href.split('/')
+    currentProduct = currentLink[currentLink.length-1].split('.')[0]
+    loadProductContent(currentProduct)
+    console.log(currentProduct);
+}

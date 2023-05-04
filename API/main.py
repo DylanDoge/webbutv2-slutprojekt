@@ -56,8 +56,13 @@ def retrieveProducts(type = None):
     
     return category
 
-
-
+@app.get("/keyboard")
+def getProductInfo(keyboard = None):
+    data = openJSONParser('json/products.json')
+    if keyboard == None:
+        return
+    if data["keyboards"][keyboard] != None:
+        return data["keyboards"][keyboard]
 
 
 if __name__ == "__main__":

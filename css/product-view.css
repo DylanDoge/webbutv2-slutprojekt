@@ -1,16 +1,20 @@
 #product-wrapper {
-    margin: 150px 0 0 0;
+    margin: 50px 0 0 0;
 }
 
 #product-View {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100vh;
-    margin: 0 200px 0 200px;
+    grid-template-columns: 2fr 1fr;
+    margin: 50px 200px 200px 200px;
+    gap: 75px 100px;
 }
 
 #product-Images {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#product-Images img {
+    max-width: 100%;
 }
 
 .product-TopNavRoute {
@@ -19,14 +23,20 @@
     font-family: var(--description-font);
     font-weight: 700;
     column-gap: 10px;
+    padding-left: 15px;
 }
 
 #keySwitchLabel {
-    padding-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .product-TopNavRoute a {
     color: var(--primary-color);
+}
+
+#product-Detail {
+    grid-area: 2 / 1 / 3 / 3;
+    padding-top: 10px;
 }
 
 #product-Description {
@@ -34,10 +44,12 @@
     flex-direction: column;
     font-family: var(--description-font);
     color: var(--primary-color);
+    margin-top: 4rem;
 }
 
-.product-ShortDescription {
+#product-ShortDescription {
     font-size: 21px;
+    margin-top: 1rem;
 }
 
 #keySwitchSelector {
@@ -47,13 +59,10 @@
     border-bottom: 2px var(--primary-color) solid;
     font-family: var(--title-font);
     color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
-/* #keySwitchSelector option {
-    min-height: 1.2rem;
-} */
-
-.product-Price {
+#product-Price {
     margin-top: 20px;
     font-size: 28px;
 }
@@ -113,7 +122,13 @@
   margin: 0;
 }
 
-#product-Header {
+/* Works for Firefox */
+.product-QuanityInput[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+
+#product-Header, #product-DescriptionHeader {
     /* font-family: var(--title-font); */
     font-size: 34px;
 

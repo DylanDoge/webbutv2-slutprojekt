@@ -1,9 +1,10 @@
 {
     "keyboards": {
-        "Zouer 68": {
-            "productsTitle": "Zouer 68 - Compact 65%",
+        "Zouer68": {
+            "productTitle": "Zouer 68 - Compact 65%",
             "priceText": "Starting 899 kr",
-            "mainImage": "img/DSC01041.jpg",
+            "price": "899 kr",
+            "mainImage": "/img/KeyboardSW.JPG",
             "plate": "DK68 Polycarbonate",
             "pcb": "DK68 Hotswap PCB Wireless BT5.0 and wired",
             "connector": "USB-C",
@@ -11,21 +12,26 @@
             "stabilizer": "",
             "productURL": "/Zouer68.html"
         },
-        "CIY GAS67": {
-            "productsTitle": "CIY GAS67 - Compact 65%",
-            "priceText": "Starting 0 kr",
-            "mainImage": "img/not-available-cover.png",
-            "plate": "Included Polycarbonate",
-            "pcb": "Included 1.2mm Hotswap PCB Wireless 2.4GHz, BT 5.0 and wired",
-            "connector": "USB-C",
-            "mountingType": "Gasket",
-            "stabilizer": "",
+        "CIY67": {
+            "productTitle": "CIY GAS67 - Compact 65%",
+            "priceText": "Starting 899 kr",
+            "price": "899 kr",
+            "mainImage": "/img/KeyboardSW.JPG",
+            "specs": {
+                "plate": "Included Polycarbonate",
+                "pcb": "Included 1.2mm Hotswap PCB Wireless 2.4GHz, BT 5.0 and wired",
+                "connector": "USB-C",
+                "mountingType": "Gasket",
+                "stabilizer": ""
+            },
+            "shortDescription": "Budget Wireless Keyb",
             "productURL": "/CIY67.html"
             
         },
-        "Glorious GMMK PRO": {
-            "productsTitle": "Glorious GMMK PRO 75%",
+        "GMMKPRO": {
+            "productTitle": "Glorious GMMK PRO 75%",
             "priceText": "Starting 1 kr",
+            "price": "1899 kr",
             "mainImage": "img/not-available-cover.png",
             "plate": "Included Aluminium",
             "pcb": "Included Hotswap PCB wired",
