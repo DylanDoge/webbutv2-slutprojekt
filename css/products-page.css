@@ -33,6 +33,7 @@
 
 .products-card img {
     max-width: 100%;
+    object-fit: cover;
 }
 
 .products-card a {

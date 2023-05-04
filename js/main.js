@@ -4,7 +4,7 @@ const KEYBOARD_INFO_FROM_API = 'http://127.0.0.1:8000/keyboardData';
 
 async function fetchWithTimeout(url, timeout) {
     const controller = new AbortController;
-    const timeoutID = setTimeout(() => controller.abort(), timeout);
+    const timeoutID = setTimeout(() => {controller.abort()}, timeout);
     try {
         const response = fetch(url, {method: "GET", headers: {"Content-Type": "application/json"}});
         if (!(await response).ok) {
@@ -53,6 +53,7 @@ async function createKeyboard() {
 function keyPressUpdate(keyObject, released) {
     keyPressed = keyObject["keyCode"];
     // jeffySFX.play()
+    console.log(keyObject);
 
     for (let i = 0; i < allKeysString.length; i++) {
         if (keyPressed == keyboardObjectInfo["keyCode"][allKeysString[i].textContent.toLowerCase()]) {

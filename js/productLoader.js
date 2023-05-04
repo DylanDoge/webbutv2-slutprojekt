@@ -1,6 +1,7 @@
 
 let products = document.getElementById('products-MainProducts');
 let productView = document.getElementById("product-View");
+const API_HOST_ADDRESS = 'http://192.168.50.87:8000'
 
 function addProduct(productObject) {
     const productCard = document.createElement('section');
@@ -30,9 +31,10 @@ function addProduct(productObject) {
 
 async function fetchWithTimeout(url, timeout) {
     const controller = new AbortController;
-    const timeoutID = setTimeout(() => controller.abort(), timeout);
+    const signal = controller.signal
+    const timeoutID = setTimeout(() => {controller.abort()}, timeout);
     try {
-        const response = fetch(url, {method: "GET", headers: {"Content-Type": "application/json"}});
+        const response = fetch(url, {method: "GET", headers: {"Content-Type": "application/json"}, signal});
         if (!(await response).ok) {
             throw new Error("API GET Failed: Network Issue");
         }
@@ -45,7 +47,7 @@ async function fetchWithTimeout(url, timeout) {
 
 async function displayAllProducts() {
     try {
-        const productsObject = await fetchWithTimeout('http://127.0.0.1:8000/products?type=keyboards', 1500)
+        const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=keyboards`, 1500)
         let productKeyArray = Object.keys(productsObject);
 
         for (let i = 0; i < productKeyArray.length; i++) {
@@ -79,8 +81,8 @@ async function loadProductContent(productName) {
     let productSections = document.getElementById('product-View').querySelectorAll('section')
     hideShowElements(productSections, false)
     try {
-        const productsObject = await fetchWithTimeout(`http://127.0.0.1:8000/keyboard?keyboard=${productName}`, 1500)
-        const switches = await fetchWithTimeout('http://127.0.0.1:8000/products?type=switches', 1500)
+        const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/keyboard?keyboard=${productName}`, 1500)
+        const switches = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=switches`, 1500)
         let productKeyArray = Object.keys(switches);
         
         hideShowElements(productSections, true)
@@ -121,3 +123,6 @@ if (productView != null) {
     loadProductContent(currentProduct)
     console.log(currentProduct);
 }
+
+let main = document.getElementById('wrapper')
+console.log(main.getBoundingClientRect())
