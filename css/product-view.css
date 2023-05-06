@@ -1,5 +1,6 @@
 #product-wrapper {
-    margin: 50px 0 0 0;
+    min-height: 100vh;
+    padding-top: 50px
 }
 
 #product-View {
@@ -161,7 +162,7 @@
 
 @media screen and (max-width: 968px) {
     #product-wrapper {
-        margin-top: 10px;
+        padding-top: 10px;
     }
 
     #product-View {

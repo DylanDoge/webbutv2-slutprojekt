@@ -53,7 +53,6 @@ async function createKeyboard() {
 function keyPressUpdate(keyObject, released) {
     keyPressed = keyObject["keyCode"];
     // jeffySFX.play()
-    console.log(keyObject);
 
     for (let i = 0; i < allKeysString.length; i++) {
         if (keyPressed == keyboardObjectInfo["keyCode"][allKeysString[i].textContent.toLowerCase()]) {
@@ -83,7 +82,7 @@ function aboutInfoHover(aboutUsState) {
     }
 }
 
-
+// Visual keyboard tester
 let aboutUs = document.getElementById('aboutUs');
 let content = document.querySelector('main');
 let aboutUsDescription = document.getElementById('aboutUsDescription');
@@ -93,6 +92,24 @@ aboutUs.addEventListener('mouseleave', () => aboutInfoHover(true));
 createKeyboard();
 let allKeysString = document.getElementsByClassName('key');
 
+// Detect keypress
 const x = document.querySelector('body');
 x.addEventListener('keydown', key => keyPressUpdate(key, false));
 x.addEventListener('keyup', key => keyPressUpdate(key, true));
+
+// Footer animation
+let footer = document.getElementById('headerFooter')
+
+function vhToPixels (vh) {
+    return Math.round(window.innerHeight / (100 / vh));
+}
+
+addEventListener('scroll', () => {
+    let higlightHeight = vhToPixels(91);
+    let pixelDiffAfterContent = content.clientHeight-(window.scrollY+higlightHeight)
+    if (pixelDiffAfterContent < 0) {
+        footer.style.setProperty('transform', `translate3d(0px, ${pixelDiffAfterContent}px, 0px)`)
+    } else {
+        footer.style.setProperty('transform', `translate3d(0px, 0px, 0px)`)
+    }
+})

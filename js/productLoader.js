@@ -83,6 +83,7 @@ async function loadProductContent(productName) {
     try {
         const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/keyboard?keyboard=${productName}`, 1500)
         const switches = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=switches`, 1500)
+        let switchSelector = document.getElementById('keySwitchSelector')
         let productKeyArray = Object.keys(switches);
         
         hideShowElements(productSections, true)
@@ -97,8 +98,18 @@ async function loadProductContent(productName) {
             let optionInSelector = document.createElement('option');
             optionInSelector.value = productKeyArray[i];
             optionInSelector.textContent = productKeyArray[i];
-            document.getElementById('keySwitchSelector').appendChild(optionInSelector);
+            switchSelector.appendChild(optionInSelector);
         }
+
+        let currentSwitchValue = switchSelector.options[switchSelector.selectedIndex].value
+        switchSelector.addEventListener('click', () => {
+            if (currentSwitchValue != switchSelector.options[switchSelector.selectedIndex].value) {
+                image.src = productsObject["switchImages"][switchSelector.options[switchSelector.selectedIndex].value]
+                switchSelector.options[switchSelector.selectedIndex].value
+                currentSwitchValue = switchSelector.options[switchSelector.selectedIndex].value
+            }
+            
+        })
         
     } catch (error) {
         let text = document.createElement('p');
@@ -123,6 +134,3 @@ if (productView != null) {
     loadProductContent(currentProduct)
     console.log(currentProduct);
 }
-
-let main = document.getElementById('wrapper')
-console.log(main.getBoundingClientRect())

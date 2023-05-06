@@ -4,19 +4,43 @@
             "productTitle": "Zouer 68 - Compact 65%",
             "priceText": "Starting 899 kr",
             "price": "899 kr",
-            "mainImage": "/img/KeyboardSW.JPG",
-            "plate": "DK68 Polycarbonate",
-            "pcb": "DK68 Hotswap PCB Wireless BT5.0 and wired",
-            "connector": "USB-C",
-            "mountingType": "Gasket",
-            "stabilizer": "",
+            "mainImage": "/img/keyboards/Zouer68/DSC04756.JPG",
+            "switchImages": {
+                "None": "/img/keyboards/Zouer68/DSC04756.JPG",
+                "Akko CS Wine Red Lubed": "/img/keyboards/Zouer68/crop/DSC04803.JPG",
+                "Akko V3 Cream Yellow": "/img/keyboards/Zouer68/crop/DSC04801.JPG",
+                "Akko V3 Cream Blue": "/img/keyboards/Zouer68/crop/DSC04804.JPG",
+                "KTT Kang White V3": "/img/keyboards/Zouer68/crop/DSC04805.JPG",
+                "Gazzew Boba U4T Thocky Tactile": "/img/keyboards/Zouer68/crop/DSC04800.JPG",
+                "Durock EV01 Linear": "/img/keyboards/Zouer68/crop/DSC04806.JPG",
+                "C³ EQUALZ X TKC Banana Split": "/img/keyboards/Zouer68/crop/DSC04807.JPG",
+                "NovelKeys Cream Switch V1": "/img/keyboards/Zouer68/crop/DSC04808.JPG"
+            },
+            "specs": {
+                "plate": "DK68 Polycarbonate",
+                "pcb": "DK68 Hotswap PCB Wireless BT5.0 and wired",
+                "connector": "USB-C",
+                "mountingType": "Gasket",
+                "stabilizer": ""
+            },
             "productURL": "/Zouer68.html"
         },
-        "CIY67": {
-            "productTitle": "CIY GAS67 - Compact 65%",
+        "CIY68": {
+            "productTitle": "CIY GAS68 - Compact 65%",
             "priceText": "Starting 899 kr",
             "price": "899 kr",
-            "mainImage": "/img/KeyboardSW.JPG",
+            "mainImage": "/img/keyboards/CIY68/DSC04769.JPG",
+            "switchImages": {
+                "None": "/img/keyboards/CIY68/DSC04769.JPG",
+                "Akko CS Wine Red Lubed": "/img/keyboards/CIY68/crop/DSC04809.JPG",
+                "Akko V3 Cream Yellow": "/img/keyboards/CIY68/crop/DSC04812.JPG",
+                "Akko V3 Cream Blue": "/img/keyboards/CIY68/crop/DSC04814.JPG",
+                "KTT Kang White V3": "/img/keyboards/CIY68/crop/DSC04815.JPG",
+                "Gazzew Boba U4T Thocky Tactile": "/img/keyboards/CIY68/crop/DSC04816.JPG",
+                "Durock EV01 Linear": "/img/keyboards/CIY68/crop/DSC04818.JPG",
+                "C³ EQUALZ X TKC Banana Split": "/img/keyboards/CIY68/crop/DSC04819.JPG",
+                "NovelKeys Cream Switch V1": "/img/keyboards/CIY68/crop/DSC04820.JPG"
+            },
             "specs": {
                 "plate": "Included Polycarbonate",
                 "pcb": "Included 1.2mm Hotswap PCB Wireless 2.4GHz, BT 5.0 and wired",
@@ -25,7 +49,7 @@
                 "stabilizer": ""
             },
             "shortDescription": "Budget Wireless Keyb",
-            "productURL": "/CIY67.html"
+            "productURL": "/CIY68.html"
             
         },
         "GMMKPRO": {
@@ -33,11 +57,13 @@
             "priceText": "Starting 1 kr",
             "price": "1899 kr",
             "mainImage": "img/not-available-cover.png",
-            "plate": "Included Aluminium",
-            "pcb": "Included Hotswap PCB wired",
-            "connector": "USB-C",
-            "moutingType": "Gasket",
-            "stabilizer": "Durock V2 Stabilizers Screw-In",
+            "specs": {
+                "plate": "Included Aluminium",
+                "pcb": "Included Hotswap PCB wired",
+                "connector": "USB-C",
+                "moutingType": "Gasket",
+                "stabilizer": "Durock V2 Stabilizers Screw-In"
+            },
             "productURL": "/GMMKPRO.html"
             
         }
@@ -66,20 +92,11 @@
             "type": "Linear"
             
         },
-        "Cherry MX Red": {
-            "type": "Linear"
-            
-        },
-        "Cherry MX Brown": {
-            "type": "Tactile"
-            
-        },
-        "Cherry MX Silver": {
-            "type": "Linear"
-
-        },
         "C³ EQUALZ X TKC Banana Split": {
             "type": "Linear"
+        },
+        "NovelKeys Cream Switch V1": {
+            "type":"Linear"
         }
     }
 }
