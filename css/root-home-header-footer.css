@@ -210,7 +210,7 @@ a img#cartIcon {
     display: block;
     align-self: center;
     justify-self: center;
-    scale: 80%;
+    height: 38px;
     filter: invert(100%);
     margin-right: 1rem;
 }
@@ -264,12 +264,10 @@ nav a:first-child {
     grid-area: 1 / 2 / 2 / 3;
 }
 
-.homeProductImage section{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+.homeProductImage img{
+    max-width: 100%;
     height: calc(100vh - var(--header-hight));
-    width: 100%;
+    object-fit: cover;
 }
 
 .highlightedProducts {
@@ -448,7 +446,7 @@ nav a:first-child {
         grid-area: unset;
     }
     
-    .homeProductImage section {
+    .homeProductImage img {
         height: calc(69vh - var(--header-hight));
     }
 

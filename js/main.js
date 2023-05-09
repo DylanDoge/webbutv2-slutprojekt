@@ -98,7 +98,7 @@ x.addEventListener('keydown', key => keyPressUpdate(key, false));
 x.addEventListener('keyup', key => keyPressUpdate(key, true));
 
 // Footer animation
-let footer = document.getElementById('headerFooter')
+let footer = document.getElementById('headerFooter');
 
 function vhToPixels (vh) {
     return Math.round(window.innerHeight / (100 / vh));
@@ -106,10 +106,10 @@ function vhToPixels (vh) {
 
 addEventListener('scroll', () => {
     let higlightHeight = vhToPixels(91);
-    let pixelDiffAfterContent = content.clientHeight-(window.scrollY+higlightHeight)
+    let pixelDiffAfterContent = content.clientHeight-(window.scrollY+higlightHeight);
     if (pixelDiffAfterContent < 0) {
-        footer.style.setProperty('transform', `translate3d(0px, ${pixelDiffAfterContent}px, 0px)`)
+        footer.style.setProperty('transform', `translate3d(0px, ${pixelDiffAfterContent}px, 0px)`);
     } else {
-        footer.style.setProperty('transform', `translate3d(0px, 0px, 0px)`)
+        footer.style.setProperty('transform', `translate3d(0px, 0px, 0px)`);
     }
 })

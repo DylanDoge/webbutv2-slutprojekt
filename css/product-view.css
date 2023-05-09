@@ -127,7 +127,7 @@
 /* Works for Firefox */
 .product-QuanityInput[type="number"] {
     -moz-appearance: textfield;
-  }
+}
 
 
 #product-Header, #product-DescriptionHeader {

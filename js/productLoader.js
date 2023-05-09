@@ -1,7 +1,7 @@
 
 let products = document.getElementById('products-MainProducts');
 let productView = document.getElementById("product-View");
-const API_HOST_ADDRESS = 'http://192.168.50.87:8000'
+const API_HOST_ADDRESS = 'http://127.0.0.1:8000';
 
 function addProduct(productObject) {
     const productCard = document.createElement('section');
@@ -31,7 +31,7 @@ function addProduct(productObject) {
 
 async function fetchWithTimeout(url, timeout) {
     const controller = new AbortController;
-    const signal = controller.signal
+    const signal = controller.signal;
     const timeoutID = setTimeout(() => {controller.abort()}, timeout);
     try {
         const response = fetch(url, {method: "GET", headers: {"Content-Type": "application/json"}, signal});
@@ -47,7 +47,7 @@ async function fetchWithTimeout(url, timeout) {
 
 async function displayAllProducts() {
     try {
-        const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=keyboards`, 1500)
+        const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=keyboards`, 1500);
         let productKeyArray = Object.keys(productsObject);
 
         for (let i = 0; i < productKeyArray.length; i++) {
@@ -78,21 +78,21 @@ function hideShowElements(elements, visible) {
 }
 
 async function loadProductContent(productName) {
-    let productSections = document.getElementById('product-View').querySelectorAll('section')
-    hideShowElements(productSections, false)
+    let productSections = document.getElementById('product-View').querySelectorAll('section');
+    hideShowElements(productSections, false);
     try {
-        const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/keyboard?keyboard=${productName}`, 1500)
-        const switches = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=switches`, 1500)
-        let switchSelector = document.getElementById('keySwitchSelector')
+        const productsObject = await fetchWithTimeout(`${API_HOST_ADDRESS}/keyboard?keyboard=${productName}`, 1500);
+        const switches = await fetchWithTimeout(`${API_HOST_ADDRESS}/products?type=switches`, 1500);
+        let switchSelector = document.getElementById('keySwitchSelector');
         let productKeyArray = Object.keys(switches);
         
-        hideShowElements(productSections, true)
+        hideShowElements(productSections, true);
         document.getElementById('product-Header').textContent = productsObject["productTitle"];
         document.getElementById('product-ShortDescription').textContent = productsObject["shortDescription"];
-        document.getElementById('product-Price').textContent = productsObject["price"]
-        let image = document.getElementById('product-Images').querySelector('img')
-        image.src = productsObject["mainImage"]
-        image.alt = productsObject["productTitle"]
+        document.getElementById('product-Price').textContent = productsObject["price"];
+        let image = document.getElementById('product-Images').querySelector('img');
+        image.src = productsObject["mainImage"];
+        image.alt = productsObject["productTitle"];
         
         for (let i = 0; i < productKeyArray.length; i++) {
             let optionInSelector = document.createElement('option');
@@ -101,12 +101,12 @@ async function loadProductContent(productName) {
             switchSelector.appendChild(optionInSelector);
         }
 
-        let currentSwitchValue = switchSelector.options[switchSelector.selectedIndex].value
-        switchSelector.addEventListener('click', () => {
+        let currentSwitchValue = switchSelector.options[switchSelector.selectedIndex].value;
+        switchSelector.addEventListener("change", () => {
             if (currentSwitchValue != switchSelector.options[switchSelector.selectedIndex].value) {
-                image.src = productsObject["switchImages"][switchSelector.options[switchSelector.selectedIndex].value]
-                switchSelector.options[switchSelector.selectedIndex].value
-                currentSwitchValue = switchSelector.options[switchSelector.selectedIndex].value
+                image.src = productsObject["switchImages"][switchSelector.options[switchSelector.selectedIndex].value];
+                switchSelector.options[switchSelector.selectedIndex].value;
+                currentSwitchValue = switchSelector.options[switchSelector.selectedIndex].value;
             }
             
         })
@@ -125,12 +125,12 @@ async function loadProductContent(productName) {
 }
 
 if (products != null) {
-    displayAllProducts()
+    displayAllProducts();
 }
 
 if (productView != null) {
-    currentLink = window.location.href.split('/')
-    currentProduct = currentLink[currentLink.length-1].split('.')[0]
-    loadProductContent(currentProduct)
+    currentLink = window.location.href.split('/');
+    currentProduct = currentLink[currentLink.length-1].split('.')[0];
+    loadProductContent(currentProduct);
     console.log(currentProduct);
 }
