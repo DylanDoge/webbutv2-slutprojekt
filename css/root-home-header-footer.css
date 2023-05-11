@@ -20,7 +20,7 @@
     --button-font: 'Roboto', 'Zurich', sans-serif;
     --description-font: 'Space Mono', monospace;
     --roundness: 0px;
-    --header-hight: 9vh;
+    --header-hight: 90px;
 }
 
 h1 {
@@ -262,10 +262,12 @@ nav a:first-child {
 
 .homeProductImage {
     grid-area: 1 / 2 / 2 / 3;
+    line-height: 0;
 }
 
 .homeProductImage img{
     max-width: 100%;
+    width: 100%;
     height: calc(100vh - var(--header-hight));
     object-fit: cover;
 }
@@ -424,6 +426,13 @@ nav a:first-child {
         font-size: 12px;
     }
     
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    :root {
+        --header-hight: 50px;
+
+    }
 }
 
 @media screen and (max-width: 792px){
